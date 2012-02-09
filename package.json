@@ -23,7 +23,7 @@
 
 , "dependencies":
   { "fuzzy-filter":     "*"
-  , "stratus-keyboard": "*"
+  , "stratus-keyboard": ">=0.0.2"
   , "stylus":           "0.x.x"
   , "nib":              "0.3.x"
   }
