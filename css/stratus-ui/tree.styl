@@ -1,0 +1,95 @@
+@import './mixins'
+
+.tree
+  absolute top 0px left 0px
+  bottom 0px
+  right 0px
+  
+  background white
+  color #222
+  font-size 75%
+  overflow auto
+  font-family sans-serif
+  user-select none
+
+.leaf
+  cursor default
+  list-style none
+  margin-left 16px
+  white-space nowrap
+  
+  > .selection
+    absolute left 0px
+    height 20px
+    right 0px
+    z-index 1
+  
+  &.selected
+    > .selection
+      background rgba(dblue, 0.35)
+  
+  // Leaf types
+  ///////////////////////////////////////
+  &.expandable
+    cursor default
+  
+  &.normal
+    > .leaf-icon-1
+      margin-left 11px
+  
+  // The triangle that indicates that the leaf is expandable.
+  .leaf-triangle
+    background-image url('/images/icons/arrow-right.png')
+    background-size contain
+    cursor  pointer
+    display inline-block
+    margin-right 2px
+    margin-bottom 4px
+    /*height 0px
+    width  0px*/
+    height 6px
+    position relative
+    transition all 250ms ease
+    width 6px
+    z-index 2
+  
+  &.expanded > .leaf-triangle
+    transform rotate(90deg)
+  
+  
+  // Leaf components
+  ///////////////////////////////////////
+  > .leaf-icon-1, > .leaf-icon-2
+    height 16px
+    //padding 1px 0px
+    margin-top 2px
+    position relative
+    width 16px
+    z-index 2
+  
+  //.leaf-icon-1
+    
+  // The leaf text.
+  > .leaf-label
+    bottom 3px
+    position relative
+    z-index 2
+  
+  //.leaf-icon-2
+  
+  > .leaf-edit
+    border-radius 0px
+    bottom 3px
+    box-shadow none
+    color #222
+    font-size 100%
+    margin-bottom -1px
+    padding 0px
+    position relative
+    right 5px
+    z-index 2
+    &, &:focus
+      border 1px solid dblue
+
+.tree > .leaf
+  margin-left 6px

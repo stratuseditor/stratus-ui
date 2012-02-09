@@ -1,0 +1,140 @@
+@import './mixins'
+
+bc = rgba(black, 0.3)
+
+.menu
+  background white
+  
+  border-top 1px solid bc
+  border-left 1px solid bc
+  border-right 1px solid bc
+  border-bottom 1px solid bc
+  box-shadow 1px 1px 3px rgba(black, 0.15)
+  
+  font-family sans-serif
+  font-size 88%
+  list-style none
+  overflow-y auto
+  position absolute
+  z-index 100
+  
+  li
+    border-top 1px solid transparent
+    border-bottom 1px solid transparent
+    color #333
+    cursor pointer
+    padding 4px 20px
+    position relative
+    min-width 70px
+    user-select none
+    
+    > a
+      color inherit
+      display block
+      margin -4px -20px
+      padding 4px 20px
+      &:hover
+        text-decoration none
+    
+    &:hover, &.cascade.active
+      background dblue
+      color white
+      
+      > .symbol
+        color white
+    
+    > .symbol
+      color #666
+      display inline-block
+      font-size 80%
+      margin-left -20px
+      margin-top -2px
+      text-align center
+      width 20px
+  
+  li.divider
+    border-top 1px solid #ccc
+    border-bottom none
+    margin 1px 5%
+    height 0px
+    padding 0px
+    width 90%
+    
+    &:hover
+      background none
+  
+  // A right arrow indicates that a cascade menu will appear on hover.
+  li.cascade
+    cursor default
+    &:hover, &.active
+      &::after
+        background-image url('/images/icons/arrow-right-white.png')
+    
+    &::after
+      absolute top 10px
+      right 6px
+      background-image url('/images/icons/arrow-right.png')
+      background-size contain
+      content ' '
+      height 6px
+      width 6px
+  
+
+// Cover up the border joining the parent menu with it's cascade.
+.menu.cascade li:first-child
+  &::before
+    absolute top 0px left -2px
+    background dblue
+    box-shadow 0px -2px 0px dblue
+    content ' '
+    height 100%
+    width 2px
+    z-index 101
+
+
+nav.toolbar
+  background linear-gradient(top, #f0f0f0, #e2e2e2)
+  cursor default
+  font-size 85%
+  font-family sans-serif
+  user-select none
+  
+  ul
+    list-style none
+    li
+      border-left 1px solid transparent
+      border-right 1px solid transparent
+      color #333
+      display inline-block
+      font-weight bold
+      padding 3px 18px
+      position relative
+      text-shadow 0px 1px 0px white
+      
+      &:hover
+        color #222
+      
+      &:active
+        background linear-gradient(top, #e5e5e5, #f0f0f0)
+        box-shadow inset 0px 0px 2px rgba(black, 0.25)
+      
+      &.active
+        background white
+        border-color bc
+        box-shadow 1px 1px 3px rgba(black, 0.15)
+        
+        // Cover up the division between the target and the dropdown.
+        &::before, &::after
+          absolute left 0px
+          background white
+          content ' '
+          height 2px
+          width 100%
+          z-index 101
+        
+        &::before
+          top -1px
+        
+        &::after
+          bottom -1px
+

@@ -1,0 +1,10 @@
+module.exports =
+  dialog:    require('./dialog')
+  filterbox: require('./filterbox')
+  keyboard:  require('stratus-keyboard')
+  tabs:      require('./tabs')
+  validate:  require('./validate')
+  menu:      require('./menu')
+  select:    require('./select')
+  split:     require('./split')
+  tree:      require('./tree')

@@ -1,0 +1,64 @@
+@import './mixins'
+
+.dialog
+  absolute top 50% left 50%
+  background linear-gradient(top, #f6f6f6, #eaeaea)
+  box-shadow 0px 2px 4px rgba(black, 0.4)
+  border-radius 8px
+  transform translate(-50%, -50%)
+  z-index 12
+  
+  > header
+    border-bottom 1px solid #ccc
+    font-family sans-serif
+    padding 10px 16px 8px 16px
+    text-align center
+    user-select none
+    
+    h1, h2
+      display inline
+      font-size 130%
+      text-shadow 0px 1px 0px white
+    
+    h1
+      color #52595D
+    h2
+      color #99a4aa
+      margin 0px 6px
+    
+    > .close
+      background transparent
+      border none
+      box-shadow none
+      color #666
+      float right
+      font-size 120%
+      margin-top 5px
+      padding 0px
+      &:hover, &:active
+        box-shadow none
+        color #444
+  
+  > .body
+    background linear-gradient(top, #F8F8F9, #FAFAFB)
+  
+  > footer
+    background transparent
+    border-top 1px solid #ddd
+    display block
+    min-height 14px
+    margin-top -1px
+
+.modal
+  absolute top 0px left 0px
+  background rgba(black, 0.6)
+  bottom 0px
+  right 0px
+  z-index 10
+
+
+.dialog-draggable
+  transform none
+  //> header
+  //  cursor move
+

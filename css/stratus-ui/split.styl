@@ -1,0 +1,50 @@
+@import './mixins'
+
+absolute-zero()
+  absolute top 0px left 0px
+  bottom 0px
+  right 0px
+
+.split
+  position relative
+.split-1, .split-2
+  absolute-zero()
+
+
+// The slider bar that is clicked and dragged.
+.split-slider
+  position absolute
+  
+  &.lr
+    background #ccc
+    cursor col-resize
+    width 2px
+    &:active
+      cursor col-resize
+  
+  &.tb
+    background #ccc
+    cursor row-resize
+    height 2px
+    &:active
+      cursor row-resize
+
+
+// A rectange indicating the change in width.
+.split-hint
+  absolute-zero()
+  background rgba(black, 0.07)
+  z-index 2
+  
+  &.lr
+    cursor col-resize
+  
+  &.tb
+    cursor row-resize
+
+// TEST
+.tree-panel
+  background white
+.main-panel
+  background white
+

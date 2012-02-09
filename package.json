@@ -1,0 +1,36 @@
+{ "name":        "stratus-ui"
+, "version":     "0.0.1"
+, "description": "UI widgets for stratus editor"
+, "keywords":    ["stratus", "browserify", "ui", "widgets"]
+, "homepage":    "https://github.com/stratuseditor/stratus-ui"
+, "bugs":
+  { "url":  "https://github.com/stratuseditor/stratus-ui/issues"
+  }
+, "author":
+  { "name": "sentientwaffle"
+  , "url":  "http://sentientwaffle.github.com/"
+  }
+
+, "main": "./index"
+, "scripts":
+  { "prepublish": "coffee -o lib -c src"
+  }
+
+, "repository":
+  { "type": "git"
+  , "url":  "https://github.com/stratuseditor/stratus-ui.git"
+  }
+
+, "dependencies":
+  { "fuzzy-filter":     "*"
+  , "stratus-keyboard": "*"
+  , "stylus":           "0.x.x"
+  , "nib":              "0.3.x"
+  }
+
+, "devDependencies":
+  { "coffee-script": "1.x.x"
+  }
+
+, "engines": { "node": ">=0.4.1" }
+}
